@@ -24,7 +24,7 @@
       <header>
         <h1>World Weather</h1>
         <p class="date">Monday 23 September 12:23</p>
-        <form>
+        <form id="search-form">
           <input
             id="city-input"
             type="search"
@@ -37,34 +37,34 @@
 
       <main>
         <p class="intro">Showing the current conditions in:</p>
-        <h2 class="city-name">Paris</h2>
+        <h2 class="city-name" id="city-name">Paris</h2>
         <div class="current-weather-container">
           <ul>
             <li>Summary: Cloudy</li>
             <li>Humidity: 72%</li>
             <li>Wind: 10 km/h</li>
           </ul>
-          <h2 class="current-temp">⛅️ 18°C</h2>
+          <h2 class="current-temp"><span>⛅️</span> 18°C</h2>
         </div>
         <div class="forecast-container">
           <div class="forecast-day">
-            <h3>Today 🌤️</h3>
+            <h3>Today <span class="emoji-smaller">🌤️</span></h3>
             <p>min: 12°C<br />max: 21°C</p>
           </div>
           <div class="forecast-day">
-            <h3>Tomorrow 🌤️</h3>
+            <h3>Tomorrow <span class="emoji-smaller">🌤️</span></h3>
             <p>min: 12°C<br />max: 21°C</p>
           </div>
           <div class="forecast-day">
-            <h3>Wednesday 🌤️</h3>
+            <h3>Wednesday <span class="emoji-smaller">🌤️</span></h3>
             <p>min: 12°C<br />max: 21°C</p>
           </div>
           <div class="forecast-day">
-            <h3>Thursday 🌤️</h3>
+            <h3>Thursday <span class="emoji-smaller">🌤️</span></h3>
             <p>min: 12°C<br />max: 21°C</p>
           </div>
           <div class="forecast-day">
-            <h3>Friday 🌤️</h3>
+            <h3>Friday <span class="emoji-smaller">🌤️</span></h3>
             <p>min: 12°C<br />max: 21°C</p>
           </div>
         </div>
@@ -85,5 +85,6 @@
         >.
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

@@ -25,6 +25,7 @@ h1 {
   text-align: center;
 }
 form {
+  margin-bottom: 40px;
   text-align: center;
 }
 form input {
@@ -39,6 +40,9 @@ ul {
 ul li,
 .current-temp {
   color: #774181;
+}
+span {
+  font-size: 40px;
 }
 footer {
   font-size: 12px;
@@ -79,10 +83,18 @@ footer {
   justify-content: space-between;
   padding: 0 100px;
 }
+.emoji-smaller {
+  font-size: 30px;
+}
 /* Styling of IDs */
 #city-input {
-  width: 50%;
+  background-color: #f6e5e5;
   border: 2px solid #774181;
+  margin-right: 5px;
+  width: 50%;
+}
+#city-input:focus {
+  outline: 2px solid #e6b2c6;
 }
 #search-input {
   background-color: #774181;
