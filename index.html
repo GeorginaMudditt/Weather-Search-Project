@@ -3,60 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather Search Project</title>
   </head>
 
   <body>
-    <header>
-    <h1>World Weather</h1>
-    <form>
-      <input
-        type="search"
-        placeholder="Enter a city ..."
-        required
-      />
-      <input type="submit" value="Search" />
-    </header>
+    <div class="weather-app-container">
+      <header>
+        <h1>World Weather</h1>
+        <p class="date">Monday 23 September 12:23</p>
+        <form>
+          <input
+            id="city-input"
+            type="search"
+            placeholder="Enter a city ..."
+            required
+          />
+          <input id="search-input" type="submit" value="Search" />
+        </form>
+      </header>
 
-    <main>
-      <p>Monday 23 September 12:23</p>
-<p>Showing the current conditions in:</p>
-<h2>Paris</h2>
-<ul>
-  <li>Summary: Cloudy</li>
-  <li>Humidity: 72%</li>
-  <li>Wind: 10 km/h</li>
-</ul>
-<h2>⛅️ 18°C</h2>
-<h3>Today 🌤️</h3>
-<p>min: 12°C<br />max: 21°C</p>
-    </main>
-<h3>Tomorrow 🌤️</h3>
-<p>min: 12°C<br />max: 21°C</p>
-    </main>
-<h3>Wednesday 🌤️</h3>
-<p>min: 12°C<br />max: 21°C</p>
-    </main>
-<h3>Thursday 🌤️</h3>
-<p>min: 12°C<br />max: 21°C</p>
-    </main>
-<h3>Friday 🌤️</h3>
-<p>min: 12°C<br />max: 21°C</p>
-    </main>
+      <main>
+        <p class="intro">Showing the current conditions in:</p>
+        <h2 class="city-name">Paris</h2>
+        <div class="current-weather-container">
+          <ul>
+            <li>Summary: Cloudy</li>
+            <li>Humidity: 72%</li>
+            <li>Wind: 10 km/h</li>
+          </ul>
+          <h2 class="current-temp">⛅️ 18°C</h2>
+        </div>
+        <div class="forecast-container">
+          <div class="forecast-day">
+            <h3>Today 🌤️</h3>
+            <p>min: 12°C<br />max: 21°C</p>
+          </div>
+          <div class="forecast-day">
+            <h3>Tomorrow 🌤️</h3>
+            <p>min: 12°C<br />max: 21°C</p>
+          </div>
+          <div class="forecast-day">
+            <h3>Wednesday 🌤️</h3>
+            <p>min: 12°C<br />max: 21°C</p>
+          </div>
+          <div class="forecast-day">
+            <h3>Thursday 🌤️</h3>
+            <p>min: 12°C<br />max: 21°C</p>
+          </div>
+          <div class="forecast-day">
+            <h3>Friday 🌤️</h3>
+            <p>min: 12°C<br />max: 21°C</p>
+          </div>
+        </div>
+      </main>
 
-    <footer>
-      Coded by
-      <a href="https://www.linkedin.com/in/georgina-mudditt/" target="_blank"
-        >Georgina Mudditt</a
-      >, open-sourced on
-      <a
-        href="https://github.com/GeorginaMudditt/Weather-Search-Project"
-        target="_blank"
-        >GitHub</a
-      >, and hosted on
-      <a href="https://gm-weather-search-project.netlify.app/" target="_blank"
-        >Netlify</a
-      >.
-    </footer>
+      <footer>
+        Coded by
+        <a href="https://www.linkedin.com/in/georgina-mudditt/" target="_blank"
+          >Georgina Mudditt</a
+        >, open-sourced on
+        <a
+          href="https://github.com/GeorginaMudditt/Weather-Search-Project"
+          target="_blank"
+          >GitHub</a
+        >, and hosted on
+        <a href="https://gm-weather-search-project.netlify.app/" target="_blank"
+          >Netlify</a
+        >.
+      </footer>
+    </div>
   </body>
 </html>

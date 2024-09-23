@@ -1,0 +1,97 @@
+/* Fonts */
+h1,
+h2 {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+p,
+form input,
+ul li,
+h3,
+footer {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Styling of Elements */
+body {
+  color: #352961;
+  background-color: #e6b2c6;
+  background-image: url("../images/buried.png");
+}
+h1 {
+  text-align: center;
+}
+form {
+  text-align: center;
+}
+form input {
+  border-radius: 10px;
+  color: #352961;
+  padding: 10px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li,
+.current-temp {
+  color: #774181;
+}
+footer {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 50px;
+}
+/* Styling of Classes */
+.date {
+  text-align: center;
+}
+.weather-app-container {
+  background-color: #f6e5e5;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: block;
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 20px 50px;
+  width: 60%;
+}
+.intro,
+.city-name {
+  text-align: center;
+}
+
+.current-weather-container {
+  align-items: center;
+  border: 2px solid #774181;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  padding: 0 80px;
+}
+.forecast-day {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+/* Styling of IDs */
+#city-input {
+  width: 50%;
+  border: 2px solid #774181;
+}
+#search-input {
+  background-color: #774181;
+  border: 2px solid #774181;
+  color: #f6e5e5;
+  width: 20%;
+}
+#search-input:hover {
+  background-color: #e6b2c6;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #352961;
+}
