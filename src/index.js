@@ -1,21 +1,52 @@
+function updateDate(response) {
+  let now = new Date();
+
+  let dayElement = document.querySelector("#day");
+  let dateElement = document.querySelector("#date");
+  let monthElement = document.querySelector("#month");
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let date = now.getDate();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+
+  dayElement.innerHTML = day;
+  dateElement.innerHTML = date;
+  monthElement.innerHTML = month;
+}
+
 function updateWeather(response) {
   let temperatureElement = document.querySelector("#current-temp-celsius");
   let summaryElement = document.querySelector("#summary");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let dayElement = document.querySelector("#day");
-  let dateElement = document.querySelector("#date");
-  let monthElement = document.querySelector("#month");
-  let timeElement = document.querySelector("#time");
 
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   summaryElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dayElement.innerHTML = "Monday";
-  dateElement.innerHTML = "23";
-  monthElement.innerHTML = "September";
-  timeElement.innerHTML = "12:23";
 }
 
 function searchACity(city) {
@@ -47,3 +78,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", enterACity);
 
 searchACity("London");
+updateDate();
