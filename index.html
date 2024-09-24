@@ -24,7 +24,7 @@
     <div class="weather-app-container">
       <header>
         <h1>World Weather</h1>
-        <p class="date">Monday 23 September 12:23</p>
+        <p class="date"><span id="day">Monday</span> <span id="date">23</span> <span id="month">September<span> <span id="time">12:23</span></p>
         <form id="search-form">
           <input
             id="city-input"
@@ -41,9 +41,9 @@
         <h2 class="city-name" id="city-name">London</h2>
         <div class="current-weather-container">
           <ul>
-            <li>Summary: Cloudy</li>
-            <li>Humidity: 72%</li>
-            <li>Wind: 10 km/h</li>
+            <li>Summary: <span id="summary"></span></li>
+            <li>Humidity: <span id="humidity"></span>%</li>
+            <li>Wind: <span id="wind"></span> km/h</li>
           </ul>
           <h2 class="current-temp">
             <span class="emoji-larger">⛅️</span>
