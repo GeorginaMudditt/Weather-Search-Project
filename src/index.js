@@ -46,11 +46,15 @@ function updateWeather(response) {
   let summaryElement = document.querySelector("#summary");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  temperatureElement.innerHTML = `${Math.round(
+    response.data.temperature.current
+  )}°C`;
   summaryElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-weather-icon"></img>`;
 }
 
 function searchACity(city) {
