@@ -4,6 +4,7 @@ function updateDate(response) {
   let dayElement = document.querySelector("#day");
   let dateElement = document.querySelector("#date");
   let monthElement = document.querySelector("#month");
+  let timeElement = document.querySelector("#time");
 
   let days = [
     "Sunday",
@@ -31,10 +32,13 @@ function updateDate(response) {
     "December",
   ];
   let month = months[now.getMonth()];
+  let hours = now.getHours();
+  let minutes = now.getMinutes().toString().padStart(2, "0");
 
   dayElement.innerHTML = day;
   dateElement.innerHTML = date;
   monthElement.innerHTML = month;
+  timeElement.innerHTML = `${hours}:${minutes}`;
 }
 
 function updateWeather(response) {
