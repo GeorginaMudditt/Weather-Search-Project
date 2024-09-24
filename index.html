@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Mono+One&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <title>Weather Search Project</title>
   </head>
 
@@ -37,14 +38,17 @@
 
       <main>
         <p class="intro">Showing the current conditions in:</p>
-        <h2 class="city-name" id="city-name">Paris</h2>
+        <h2 class="city-name" id="city-name">London</h2>
         <div class="current-weather-container">
           <ul>
             <li>Summary: Cloudy</li>
             <li>Humidity: 72%</li>
             <li>Wind: 10 km/h</li>
           </ul>
-          <h2 class="current-temp"><span>⛅️</span> 18°C</h2>
+          <h2 class="current-temp">
+            <span class="emoji-larger">⛅️</span>
+            <span id="current-temp-celsius"></span>°C
+          </h2>
         </div>
         <div class="forecast-container">
           <div class="forecast-day">
