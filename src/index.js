@@ -62,14 +62,11 @@ function searchACity(city) {
   let encodedCity = encodeURIComponent(city);
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${encodedCity}&key=${apiKey}&units=metric`;
 
-  axios
-    .get(apiUrl)
-    .then(updateWeather)
-    .catch(function (error) {
-      alert(
-        "Sorry, we couldn't find the weather for this city. Please try again."
-      );
-    });
+  axios.get(apiUrl).then(updateWeather);
+
+  let forecastApiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${encodedCity}&key=${apiKey}&units=metric`;
+
+  axios.get(forecastApiUrl).then(displayForecast);
 }
 
 function enterACity(event) {
@@ -80,6 +77,7 @@ function enterACity(event) {
 
   cityElement.innerHTML = city;
   searchACity(city);
+  updateDate();
 }
 
 let searchFormElement = document.querySelector("#search-form");
@@ -88,35 +86,48 @@ searchFormElement.addEventListener("submit", enterACity);
 searchACity("London");
 updateDate();
 
-function getForecast(city) {
-  let apiKey = "21f1caaedf3t0e238fc991db4d2f34bo";
-  let encodedCity = encodeURIComponent(city);
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${encodedCity}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[date.getDay()];
 }
 
 function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
         <div class="forecast-container">
             <div class="forecast-day">
-                <p>${day}</p>
-                <div id="forecast-icon">🌤️</div>
-                <p>min: <span class="min-temp">12</span>°C<br />
-                    max: <span class="max-temp">21</span>°C
+                <p>${formatDay(day.time)}</p>
+                <div>
+                <img src="${day.condition.icon_url}" id="forecast-icon"></img>
+                </div>
+                <p>min: <span class="min-temp">${Math.round(
+                  day.temperature.minimum
+                )}</span>°C<br />
+                    max: <span class="max-temp">${Math.round(
+                      day.temperature.maximum
+                    )}</span>°C
                 </p>    
             </div>
         </div>
    `;
+    }
   });
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
-getForecast("London");
 displayForecast();

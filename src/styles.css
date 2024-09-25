@@ -83,14 +83,20 @@ footer {
   margin-bottom: 50px;
   padding: 0 80px;
 }
+.current-weather-container img {
+  width: 80px;
+}
 .forecast-day {
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 0 100px;
 }
-.current-weather-container img {
-  width: 80px;
+.forecast-day img {
+  width: 60px;
+}
+.forecast-day p:first-child {
+  width: 100px;
 }
 /* Styling of IDs */
 #city-input {
