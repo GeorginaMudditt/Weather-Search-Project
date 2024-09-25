@@ -55,6 +55,9 @@ footer {
 .date {
   text-align: center;
 }
+.larger-text {
+  font-size: 20px;
+}
 .weather-app-container {
   background-color: #f6e5e5;
   border-radius: 20px;
@@ -81,15 +84,13 @@ footer {
   padding: 0 80px;
 }
 .forecast-day {
+  align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 0 100px;
 }
 .current-weather-container img {
   width: 80px;
-}
-.emoji-smaller {
-  font-size: 30px;
 }
 /* Styling of IDs */
 #city-input {
