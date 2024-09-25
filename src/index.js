@@ -87,3 +87,29 @@ searchFormElement.addEventListener("submit", enterACity);
 
 searchACity("London");
 updateDate();
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+        <div class="forecast-container">
+            <div class="forecast-day">
+                <p>${day}</p>
+                <div id="forecast-icon">🌤️</div>
+                <p>min: <span class="min-temp">12</span>°C<br />
+                    max: <span class="max-temp">21</span>°C
+                </p>    
+            </div>
+        </div>
+   `;
+  });
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
