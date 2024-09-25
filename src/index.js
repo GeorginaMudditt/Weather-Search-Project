@@ -101,6 +101,10 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
+  if (!response || !response.data || !response.data.daily) {
+    console.error("Invalid response structure:", response);
+    return;
+  }
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
